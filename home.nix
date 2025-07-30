@@ -22,7 +22,7 @@
     pkgs.imagemagick
     pkgs.texliveMinimal
     pkgs.ast-grep
-    pkgs.mermaid-cl
+    pkgs.mermaid-cli
     pkgs.fish
     pkgs.zig
     pkgs.tectonic
@@ -59,7 +59,7 @@
 
   home.shellAliases = {
     vi = "nvim";
-  }
+  };
 
   programs.home-manager.enable = true;
 
