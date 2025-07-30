@@ -28,6 +28,10 @@
     pkgs.tectonic
     pkgs.luarocks
 
+    # github
+
+    pkgs.gh
+
     # programming languages
     
     pkgs.python313
