@@ -57,6 +57,10 @@
     # EDITOR = "emacs";
   };
 
+  home.shellAliases = {
+    vi = "nvim";
+  }
+
   programs.home-manager.enable = true;
 
   programs.git = {
@@ -69,6 +73,8 @@
   programs.starship = {
     
     enable = true;
+
+    enableBashIntegration = true;
   
     settings = {
 
