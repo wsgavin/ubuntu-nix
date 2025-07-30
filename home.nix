@@ -22,11 +22,12 @@
     pkgs.imagemagick
     pkgs.texliveMinimal
     pkgs.ast-grep
-    pkgs.mermaid-cli
+    pkgs.mermaid-cl
     pkgs.fish
     pkgs.zig
     pkgs.tectonic
     pkgs.luarocks
+    pkgs.unzip
 
     # github
 
@@ -34,6 +35,7 @@
 
     # programming languages
     
+    pkgs.gcc
     pkgs.python313
     pkgs.nodejs_22
     pkgs.go
