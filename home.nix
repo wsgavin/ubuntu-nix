@@ -59,23 +59,23 @@
 
   programs.home-manager.enable = true;
 
-  programs.bash = {
+  # programs.bash = {
     
-    enable = true;
+  #   enable = true;
     
-    #bashrcExtra = ''
-    #    eval "$(starship init bash)"
-    #  '';
+  #   bashrcExtra = ''
+  #       eval "$(starship init bash)"
+  #     '';
     
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
+  #   sessionVariables = {
+  #     EDITOR = "nvim";
+  #   };
     
-    shellAliases = {
-      vi = "nvim";
-    };
+  #   shellAliases = {
+  #     vi = "nvim";
+  #   };
   
-  };
+  # };
 
   programs.git = {
       
