@@ -57,11 +57,20 @@
     # EDITOR = "emacs";
   };
 
-  home.shellAliases = {
-    vi = "nvim";
-  };
-
   programs.home-manager.enable = true;
+
+  programs.bash = {
+    enable = true;
+    bashrcExtra = ''
+        eval "$(starship init bash)"
+      '';
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+    shellAliases = {
+      vi = "nvim";
+    };
+  };
 
   programs.git = {
       
