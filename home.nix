@@ -9,6 +9,9 @@
 
   home.packages = [
 
+    # shells
+    pkgs.zsh
+
     # utilities
 
     pkgs.neovim
@@ -28,6 +31,7 @@
     pkgs.tectonic
     pkgs.luarocks
     pkgs.unzip
+    pkgs.lazygit
 
     # github
 
