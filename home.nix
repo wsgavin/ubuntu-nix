@@ -12,7 +12,14 @@
     pkgs.fish
 
     # utilities
-    pkgs.neovim
+    pkgs.neovim # https://neovim.io/
+
+    # formatters
+    pkgs.nixfmt # htts://github.com/NixOS/nixfmt
+    pkgs.prettier # https://prettier.io/
+    pkgs.prettierd # https://github.com/fsouza/prettierd
+    pkgs.stylua # https://github.com/JohnnyMorganz/StyLua
+    pkgs.shellcheck # https://github.com/koalaman/shellcheck
 
     # for lazyvim
     pkgs.fd # https://github.com/sharkdp/fd
@@ -22,11 +29,11 @@
     pkgs.texliveMinimal # https://www.tug.org/texlive/
     pkgs.ast-grep # https://github.com/ast-grep/ast-grep
     pkgs.mermaid-cli
-    
+
     pkgs.tectonic # https://tectonic-typesetting.github.io/en-US/
     pkgs.luarocks # https://luarocks.org/
     pkgs.unzip
-    
+
     pkgs.lazygit # https://github.com/jesseduffield/lazygit
 
     # lazyvim - programming
@@ -52,7 +59,7 @@
       text = "";
     };
 
-    ".config/nvim/lua/plugins/base.lua" = {
+    ".config/nvim/lua/plugins/theme.lua" = {
       text = ''
         return {
           {
@@ -67,7 +74,49 @@
             },
           },
         }
-      ''; 
+      '';
+    };
+
+    ".config/nvim/lua/plugins/confirm.lua" = {
+      text = ''
+        return {
+          {
+            "stevearc/conform.nvim",
+
+            event = { "BufWritePre" },
+            cmd = { "ConformInfo" },
+            keys = {
+              {
+                -- Customize or remove this keymap to your liking
+                "<leader>f",
+                function()
+                  require("conform").format({ async = true })
+                end,
+                mode = "",
+                desc = "Format buffer",
+              },
+            },
+
+            opts = {
+              nix = { "nixfmt" },
+              lua = { "stylua" },
+              json = { "prettierd", "prettier" },
+            },
+
+            default_format_opts = {
+              lsp_format = "fallback",
+            },
+
+            format_on_save = { timeout_ms = 500 },
+
+            formatters = {
+              shfmt = {
+                prepend_args = { "-i", "2" },
+              },
+            },
+          },
+        }
+      '';
     };
 
     ".config/ohmyposh/spaceship.omp.json" = {
@@ -130,18 +179,18 @@
   programs.home-manager.enable = true;
 
   programs.zsh = {
-    
+
     enable = true;
 
     initContent = ''
       ####
-      # home-manager - initContent
+      # initContent
       ####
-      
+
       autoload -Uz promptinit
       promptinit
       prompt adam1
-      
+
       ### Added by Zinit's installer
       if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
           print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
@@ -150,11 +199,11 @@
               print -P "%F{33} %F{34}Installation successful.%f%b" || \
               print -P "%F{160} The clone has failed.%f%b"
       fi
-      
+
       source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
       autoload -Uz _zinit
       (( ''${+_comps} )) && _comps[zinit]=_zinit
-      
+
       # Load a few important annexes, without Turbo
       # (this is currently required for annexes)
       zinit light-mode for \
@@ -162,19 +211,17 @@
           zdharma-continuum/zinit-annex-bin-gem-node \
           zdharma-continuum/zinit-annex-patch-dl \
           zdharma-continuum/zinit-annex-rust
-      
+
       ### End of Zinit's installer chunk
-      
+
       export PATH=$PATH:/home/warren/.local/bin
-      
+
       if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
         eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/spaceship.omp.json)"
       fi
 
-      export PATH=$PATH:/home/warren/.local/bin
-      
       ####
-      # home-manager - initContent done.
+      # initContent
       ####
     '';
 
@@ -183,7 +230,7 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
-    
+
     shellAliases = {
       ls = "ls --color";
       vi = "nvim";
@@ -195,10 +242,10 @@
       size = 10000;
       save = 10000;
     };
-  
+
   };
 
-  programs.git = {  
+  programs.git = {
     enable = true;
     userEmail = "warren@dubelyoo.com";
     userName = "Warren";
