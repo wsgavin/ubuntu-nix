@@ -8,6 +8,7 @@
   home.packages = [
 
     # shells
+    pkgs.bash
     pkgs.zsh
     pkgs.fish
 
@@ -123,6 +124,7 @@
       text = ''
         {
           "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+          "shell_integration": true,
           "blocks": [
             {
               "alignment": "left",
@@ -175,6 +177,8 @@
     };
 
   };
+
+  home.shell.enableZshIntegration = true;
 
   programs.home-manager.enable = true;
 
