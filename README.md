@@ -7,8 +7,6 @@ sudo apt install -y zsh unzip
 mkdir -p ~/.local/bin
 mkdir -p ~/.config/{git,nvim,home-manager,ohmyposh}
 
-chsh
-
 rm ~/.bash*
 rm ~/.profile
 rm ~/.motd_shown
@@ -16,7 +14,6 @@ rm ~/.zcompdump
 rm ~/.zshrc
 rm ~/.sudo_as_admin_successful
 
-exit
 
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
@@ -38,12 +35,14 @@ cd .config/home-manager
 nix run home-manager -- switch -b backup
 home-manager switch -b backup --flake .
 
+chsh
+
 ```
 --
-
+```
 sudo determinate-nixd upgrade
 nix-env --upgrade
 nix flake update
 home-manager switch -b backup --flake .
 nix-collect-garbage
-
+```
