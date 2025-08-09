@@ -9,9 +9,7 @@ mkdir -p ~/.config/{git,nvim,home-manager,ohmyposh}
 
 rm ~/.bash*
 rm ~/.profile
-rm ~/.motd_shown
-rm ~/.zcompdump
-rm ~/.zshrc
+rm ~/.motd_shownc
 rm ~/.sudo_as_admin_successful
 
 
@@ -30,7 +28,7 @@ curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determin
 
 . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-cd .config/home-manager
+cd ~/.config/home-manager
 
 nix run home-manager -- switch -b backup
 home-manager switch -b backup --flake .
