@@ -26,6 +26,8 @@
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
+
+        environment.shells = with pkgs; [ zsh ];
       };
     };
 }

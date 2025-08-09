@@ -5,51 +5,51 @@
   home.homeDirectory = "/home/warren";
   home.stateVersion = "25.05";
 
-  home.packages = [
+  home.packages = with pkgs; [
 
     # shells
-    pkgs.bash
-    pkgs.zsh
-    pkgs.fish
+    bash
+    zsh
+    fish
 
     # utilities
-    pkgs.neovim # https://neovim.io/
+    neovim # https://neovim.io/
 
     # formatters
-    pkgs.nixfmt # htts://github.com/NixOS/nixfmt
-    pkgs.prettier # https://prettier.io/
-    pkgs.prettierd # https://github.com/fsouza/prettierd
-    pkgs.stylua # https://github.com/JohnnyMorganz/StyLua
-    pkgs.shellcheck # https://github.com/koalaman/shellcheck
+    nixfmt # htts://github.com/NixOS/nixfmt
+    prettier # https://prettier.io/
+    prettierd # https://github.com/fsouza/prettierd
+    stylua # https://github.com/JohnnyMorganz/StyLua
+    shellcheck # https://github.com/koalaman/shellcheck
 
     # for lazyvim
-    pkgs.fd # https://github.com/sharkdp/fd
-    pkgs.fzf # https://github.com/junegunn/fzf
-    pkgs.ripgrep # https://github.com/BurntSushi/ripgrep
-    pkgs.imagemagick # https://imagemagick.org/
-    pkgs.texliveMinimal # https://www.tug.org/texlive/
-    pkgs.ast-grep # https://github.com/ast-grep/ast-grep
-    pkgs.mermaid-cli
+    fd # https://github.com/sharkdp/fd
+    fzf # https://github.com/junegunn/fzf
+    ripgrep # https://github.com/BurntSushi/ripgrep
+    imagemagick # https://imagemagick.org/
+    texliveMinimal # https://www.tug.org/texlive/
+    ast-grep # https://github.com/ast-grep/ast-grep
+    mermaid-cli
 
-    pkgs.tectonic # https://tectonic-typesetting.github.io/en-US/
-    pkgs.luarocks # https://luarocks.org/
-    pkgs.unzip
+    tectonic # https://tectonic-typesetting.github.io/en-US/
+    luarocks # https://luarocks.org/
+    unzip
 
-    pkgs.lazygit # https://github.com/jesseduffield/lazygit
+    lazygit # https://github.com/jesseduffield/lazygit
 
     # lazyvim - programming
-    pkgs.zig # https://github.com/ziglang/zig
-    pkgs.gcc # https://gcc.gnu.org/
+    zig # https://github.com/ziglang/zig
+    gcc # https://gcc.gnu.org/
 
     # github
-    pkgs.gh
+    gh
 
     # programming languages
-    pkgs.python313
-    pkgs.nodejs_22
-    pkgs.go
-    pkgs.rustc
-    pkgs.cargo
+    python313
+    nodejs_22
+    go
+    rustc
+    cargo
 
   ];
 
