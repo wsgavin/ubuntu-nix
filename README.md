@@ -3,7 +3,6 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y zsh unzip
-sudo hostname fishy
 mkdir -p ~/.local/bin
 mkdir -p ~/.config/{git,nvim,home-manager,ohmyposh}
 
@@ -13,6 +12,7 @@ rm ~/.bash*
 rm ~/.profile
 rm ~/.motd_shown
 rm ~/.zcompdump
+rm ~/.zshrc
 rm ~/.sudo_as_admin_successful
 
 exit
@@ -37,7 +37,6 @@ curl -fsSL https://install.determinate.systems/nix | sh -s -- install --determin
 cd .config/home-manager
 
 nix run home-manager -- switch -b backup
-nix flake update
 home-manager switch -b backup --flake .
 
 --
