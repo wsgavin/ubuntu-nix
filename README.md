@@ -1,5 +1,6 @@
 # ubuntu nix
 
+```
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y zsh unzip
@@ -19,8 +20,6 @@ exit
 
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
-# Is there a way to pass -y?
-
 curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 
 export PATH=$PATH:/home/warren/.local/bin
@@ -39,6 +38,7 @@ cd .config/home-manager
 nix run home-manager -- switch -b backup
 home-manager switch -b backup --flake .
 
+```
 --
 
 sudo determinate-nixd upgrade
