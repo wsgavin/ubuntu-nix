@@ -1,6 +1,6 @@
 # ubuntu nix
 
-```
+```bash
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y zsh unzip
@@ -43,8 +43,10 @@ rm ~/.viminfo
 exit
 
 ```
+
 --
-```
+
+```bash
 sudo determinate-nixd upgrade
 nix-env --upgrade
 nix flake update
