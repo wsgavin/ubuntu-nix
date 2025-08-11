@@ -59,9 +59,9 @@
       text = "";
     };
 
-    ".config/nvim/lua/plugins/theme.lua".source = .config/nvim/lua/plugins/theme.lua;
-    ".config/nvim/lua/plugins/confirm.lua".source = .config/nvim/lua/plugins/confirm.lua;
-    ".config/ohmyposh/spaceship.omp.json".source = ./config/ohmyposh/spaceship.omp.json;
+    ".config/nvim/lua/plugins/theme.lua".source = ./.config/nvim/lua/plugins/theme.lua;
+    ".config/nvim/lua/plugins/confirm.lua".source = ./.config/nvim/lua/plugins/conform.lua;
+    ".config/ohmyposh/spaceship.omp.json".source = ./.config/ohmyposh/spaceship.omp.json;
 
   };
 
