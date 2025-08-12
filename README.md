@@ -38,11 +38,9 @@ rm ~/.motd_shown
 rm ~/.sudo_as_admin_successful
 rm ~/.zcompdump
 rm ~/.zshrc
-rm ~/.viminfo
-
-exit
-
 ```
+
+Exit out of the shell
 
 --
 
