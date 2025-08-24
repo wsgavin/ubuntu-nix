@@ -140,6 +140,10 @@
     enable = true;
     userEmail = "warren@dubelyoo.com";
     userName = "Warren";
+
+    extraConfig = {
+      init.defaultBranch = "main"; # Sets 'main' as the default branch for new repositories
+    };
   };
 
   programs.vim = {
